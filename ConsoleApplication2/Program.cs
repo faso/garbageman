@@ -19,7 +19,7 @@ namespace garbageman
             var issues = client.Issue.GetAllForRepository("faso", "garbageman").Result.Select(o => new { o.Title, o.Body }).ToList();
 
             var co = new CloneOptions();
-            co.CredentialsProvider = (_url, _user, _cred) => new UsernamePasswordCredentials { Username = "faso", Password = "ribadae13" };
+            co.CredentialsProvider = (_url, _user, _cred) => new UsernamePasswordCredentials { Username = "login", Password = "password" };
             try {
                 var url = issues.SingleOrDefault(o => o.Title == args[0]).Body;
                 var name = issues.SingleOrDefault(o => o.Title == args[0]).Title;
